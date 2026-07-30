@@ -19,3 +19,23 @@ PromiseOne.then((result)=>{
 }).catch((error)=>{
     console.log(error);
 });
+//Async /Await
+async function test() {
+    await console.log("1nd");
+    console.log("2rd");
+    console.log("3th");
+    const response = await fetch(".student.json");
+    console.log(response.status);
+    const stdn = await response.json();
+}
+test().then((result)=>{
+    console.log(result);
+})
+
+// create promises that will print username and password using 
+// AND if username and passrord is correct then print "Login Successful" otherwise print "Login Failed"
+
+const loginPromise = new Promise((resolve, reject) => {
+    const username = "user123";
+    const password = "pass123";
+});

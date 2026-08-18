@@ -7,7 +7,7 @@ async function createFile() {
     try {
         await fs.writeFile(
             fileName,
-            "Name: Satwik\nCourse: B.Tech CSE\nCollege: ABES EC",
+            "Name: Prince\nCourse: B.Tech CSE\nCollege: ABES EC",
             "utf8"
         );
 

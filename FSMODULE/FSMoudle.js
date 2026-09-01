@@ -17,7 +17,6 @@ async function createFile() {
     }
 }
 
-
 // // 2. READ
 // async function readFile() {
 //     try {

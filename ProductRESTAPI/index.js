@@ -10,10 +10,7 @@
 import express from 'express';
 const app = express();
 app.use(express.json());
-let users=[
-    { id: 1, name: "Nirjara", email: "nirjara@example.com" },
-    { id: 2, name: "Pavni", email: "pavni@example.com" }
-];
+let users=fetch('product.json').then(res=>res.json()).then(data=>{users=data;console.log(users);}).catch(err=>console.log(err));
 
 //Get :get request to fetch all users
 app.get('/users',(req,res)=>{

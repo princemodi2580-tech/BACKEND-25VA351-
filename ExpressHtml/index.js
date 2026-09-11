@@ -7,27 +7,27 @@ const PORT = 3000;
 app.get("/", (req, res) => {
     fs.readFile("./pages/home.html", "utf-8", (err, data) => {
         if (err) {
-            res.status(500).send("Error reading file");
+            res.status(500).send("Error reading home page");
             return;
         }
         res.send(data);
     });
 });
 
-app.get("/pages/about.html", (req, res) => {
+app.get("/about.html", (req, res) => {
     fs.readFile("./pages/about.html", "utf-8", (err, data) => {
         if (err) {
-            res.status(500).send("Error reading file");
+            res.status(500).send("Error reading about page");
             return;
         }
         res.send(data);
     });
 });
 
-app.get("/pages/contact.html", (req, res) => {
+app.get("/contact.html", (req, res) => {
     fs.readFile("./pages/contact.html", "utf-8", (err, data) => {
-        if (err){
-            res.status(500).send("Error reading file");
+        if (err) {
+            res.status(500).send("Error reading contact page");
             return;
         }
         res.send(data);
@@ -35,5 +35,5 @@ app.get("/pages/contact.html", (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`server is running on http://localhost:${PORT}`);
+    console.log(`Server is running on http://localhost:${PORT}`);
 });

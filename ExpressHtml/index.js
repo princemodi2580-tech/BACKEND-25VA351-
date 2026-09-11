@@ -4,36 +4,36 @@ import fs from "fs";
 const app = express();
 const PORT = 3000;
 
-app.get('/',(req,res)=>{
-    fs.readFile('./pages/home.html','utf-8',(err,data)=>{
-        if(err){
-            res.status(500).send('Error reading file');
+app.get("/", (req, res) => {
+    fs.readFile("./pages/home.html", "utf-8", (err, data) => {
+        if (err) {
+            res.status(500).send("Error reading file");
             return;
-        } else{
-            res.send(data);
         }
+        res.send(data);
     });
 });
-app.get('./pages/about',(req,res)=>{
-    fs.readFile('./pages/about.html','utf-8',(err,data)=>{
-        if(err){
-            res.status(500).send('Error reading file');
+
+app.get("/pages/about.html", (req, res) => {
+    fs.readFile("./pages/about.html", "utf-8", (err, data) => {
+        if (err) {
+            res.status(500).send("Error reading file");
             return;
-        } else{
-            res.send(data);
         }
+        res.send(data);
     });
 });
-app.get('./pages/contact',(req,res)=>{
-    fs.readFile('./pages/contact.html','utf-8',(err,data)=>{
-        if(err){
-            res.status(500).send('Error reading file');
+
+app.get("/pages/contact.html", (req, res) => {
+    fs.readFile("./pages/contact.html", "utf-8", (err, data) => {
+        if (err){
+            res.status(500).send("Error reading file");
             return;
-        } else{
-            res.send(data);
         }
+        res.send(data);
     });
 });
-app.listen(PORT,()=>{
+
+app.listen(PORT, () => {
     console.log(`server is running on http://localhost:${PORT}`);
 });

@@ -1,110 +1,261 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prince | Portfolio</title>
+    <title>My Portfolio</title>
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: Arial, sans-serif;
-            background: #080808;
+            background: #0f172a;
             color: white;
-        }
-
-        header {
-            height: 70px;
-            padding: 0 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #222;
-        }
-
-        header h2 {
-            font-size: 28px;
         }
 
         nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 8%;
+            background: rgba(15, 23, 42, 0.95);
             display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
             gap: 30px;
         }
 
-        nav a {
-            color: #aaa;
-            text-decoration: none;
-        }
-
-        nav a:hover {
+        nav ul li a {
             color: white;
+            text-decoration: none;
+            transition: 0.3s;
         }
 
-        .hero {
-            min-height: calc(100vh - 70px);
+        nav ul li a:hover {
+            color: #38bdf8;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 120px 8% 60px;
+        }
+
+        #home {
             display: flex;
-            justify-content: center;
             align-items: center;
-            text-align: center;
-            padding: 30px;
+            justify-content: space-between;
+            gap: 50px;
         }
 
-        .hero p {
-            color: #999;
+        .home-text {
+            max-width: 650px;
+        }
+
+        .home-text h1 {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .home-text h1 span {
+            color: #38bdf8;
+        }
+
+        .home-text h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .home-text p {
+            color: #cbd5e1;
             font-size: 18px;
-            margin: 20px 0;
-        }
-
-        .hero h1 {
-            font-size: 70px;
-            margin: 15px 0;
-        }
-
-        .hero h2 {
-            color: #aaa;
-            font-size: 28px;
+            line-height: 1.7;
+            margin-bottom: 30px;
         }
 
         .btn {
             display: inline-block;
-            margin-top: 20px;
             padding: 14px 28px;
-            background: white;
-            color: black;
+            background: #38bdf8;
+            color: #0f172a;
             text-decoration: none;
-            border-radius: 6px;
+            border-radius: 8px;
             font-weight: bold;
+            transition: 0.3s;
         }
 
         .btn:hover {
-            background: #ccc;
+            transform: translateY(-3px);
+            background: white;
         }
 
-        @media (max-width: 700px) {
-            header {
-                padding: 0 20px;
+        .profile {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #38bdf8, #6366f1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 100px;
+            font-weight: bold;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 45px;
+            margin-bottom: 50px;
+        }
+
+        .title span {
+            color: #38bdf8;
+        }
+
+        .about {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about p {
+            color: #cbd5e1;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .skill {
+            background: #1e293b;
+            padding: 30px;
+            text-align: center;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-8px);
+            background: #263449;
+        }
+
+        .skill h3 {
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project {
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-8px);
+        }
+
+        .project h3 {
+            color: #38bdf8;
+            margin-bottom: 15px;
+        }
+
+        .project p {
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+
+        .contact {
+            max-width: 700px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .contact p {
+            color: #cbd5e1;
+            font-size: 18px;
+            margin: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #020617;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 900px) {
+            #home {
+                flex-direction: column;
+                text-align: center;
             }
 
+            .skills {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
             nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
                 gap: 10px;
             }
 
-            nav a {
-                font-size: 12px;
+            nav ul li a {
+                font-size: 13px;
             }
 
-            .hero h1 {
-                font-size: 45px;
+            .home-text h1 {
+                font-size: 40px;
             }
 
-            .hero h2 {
-                font-size: 20px;
+            .profile {
+                width: 200px;
+                height: 200px;
+                font-size: 70px;
+            }
+
+            .skills {
+                grid-template-columns: 1fr;
+            }
+
+            .title {
+                font-size: 35px;
             }
         }
     </style>
@@ -112,35 +263,148 @@
 
 <body>
 
-    <header>
-        <h2>Prince.</h2>
+    <nav>
+        <div class="logo">MyPortfolio</div>
 
-        <nav>
-            <a href="/">Home</a>
-            <a href="/about.html">About</a>
-            <a href="/skills.html">Skills</a>
-            <a href="/projects.html">Projects</a>
-            <a href="/contact.html">Contact</a>
-        </nav>
-    </header>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    <section class="hero">
-        <div>
-            <p>HELLO, I'M</p>
+    <section id="home">
 
-            <h1>Prince Kumar Modi</h1>
+        <div class="home-text">
+            <h1>Hello, I'm <span>Prince</span></h1>
 
-            <h2>Full Stack Developer</h2>
+            <h2>Developer & Future Entrepreneur</h2>
 
             <p>
-                I build modern websites, REST APIs and software projects
-                using programming and web technologies.
+                I am passionate about programming, web development,
+                software development and building innovative technology.
+                I love learning new technologies and turning ideas into
+                real-world projects.
             </p>
 
-            <a href="/projects.html" class="btn">View My Projects</a>
+            <a href="#projects" class="btn">View My Projects</a>
         </div>
+
+        <div class="profile">
+            P
+        </div>
+
     </section>
+
+    <section id="about">
+
+        <h2 class="title">About <span>Me</span></h2>
+
+        <div class="about">
+            <p>
+                I am a passionate developer interested in Computer Science,
+                programming, web development, artificial intelligence and
+                entrepreneurship.
+            </p>
+
+            <br>
+
+            <p>
+                My goal is to continuously improve my technical skills,
+                build useful products and create technology that can
+                positively impact millions of people.
+            </p>
+        </div>
+
+    </section>
+
+    <section id="skills">
+
+        <h2 class="title">My <span>Skills</span></h2>
+
+        <div class="skills">
+
+            <div class="skill">
+                <h3>C++</h3>
+                <p>DSA & Problem Solving</p>
+            </div>
+
+            <div class="skill">
+                <h3>Python</h3>
+                <p>Programming & Automation</p>
+            </div>
+
+            <div class="skill">
+                <h3>JavaScript</h3>
+                <p>Web Development</p>
+            </div>
+
+            <div class="skill">
+                <h3>Node.js</h3>
+                <p>Backend Development</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="projects">
+
+        <h2 class="title">My <span>Projects</span></h2>
+
+        <div class="projects">
+
+            <div class="project">
+                <h3>Edu Vistara</h3>
+                <p>
+                    An education platform designed to provide notes,
+                    quizzes and learning resources for students.
+                </p>
+            </div>
+
+            <div class="project">
+                <h3>REST API</h3>
+                <p>
+                    A backend REST API created using Node.js and Express
+                    for managing products and users.
+                </p>
+            </div>
+
+            <div class="project">
+                <h3>Game Development</h3>
+                <p>
+                    Exploring 3D game development and interactive
+                    experiences using modern game development tools.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="contact">
+
+        <h2 class="title">Contact <span>Me</span></h2>
+
+        <div class="contact">
+            <p>Email: your@email.com</p>
+            <p>GitHub: github.com/yourusername</p>
+            <p>LinkedIn: linkedin.com/in/yourusername</p>
+
+            <br>
+
+            <a href="mailto:your@email.com" class="btn">
+                Send Message
+            </a>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>© 2026 Prince. All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>
-```

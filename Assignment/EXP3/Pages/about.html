@@ -1,123 +1,70 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | Prince</title>
+    <title>About Me</title>
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
+            margin: 0;
             font-family: Arial, sans-serif;
-            background: #080808;
+            background: #111827;
             color: white;
-        }
-
-        header {
-            height: 70px;
-            padding: 0 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #222;
-        }
-
-        header h2 {
-            font-size: 28px;
         }
 
         nav {
-            display: flex;
-            gap: 30px;
-        }
-
-        nav a {
-            color: #aaa;
-            text-decoration: none;
-        }
-
-        nav a:hover {
-            color: white;
-        }
-
-        .about {
-            max-width: 900px;
-            margin: auto;
-            padding: 120px 30px;
+            background: #1f2937;
+            padding: 20px;
             text-align: center;
         }
 
-        .about h1 {
-            font-size: 55px;
-            margin-bottom: 35px;
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
         }
 
-        .about p {
-            color: #999;
+        .container {
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 45px;
+        }
+
+        p {
             font-size: 18px;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        @media (max-width: 700px) {
-            header {
-                padding: 0 20px;
-            }
-
-            nav {
-                gap: 10px;
-            }
-
-            nav a {
-                font-size: 12px;
-            }
-
-            .about h1 {
-                font-size: 40px;
-            }
+            line-height: 1.7;
+            color: #d1d5db;
         }
     </style>
 </head>
 
 <body>
 
-    <header>
-        <h2>Prince.</h2>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+    </nav>
 
-        <nav>
-            <a href="/">Home</a>
-            <a href="/about.html">About</a>
-            <a href="/skills.html">Skills</a>
-            <a href="/projects.html">Projects</a>
-            <a href="/contact.html">Contact</a>
-        </nav>
-    </header>
-
-    <section class="about">
+    <div class="container">
         <h1>About Me</h1>
 
         <p>
-            I am a developer interested in programming, computer science,
-            web development and building real-world projects.
+            Hello! I am a passionate developer interested in
+            programming, web development, software development
+            and building innovative projects.
         </p>
 
         <p>
-            I enjoy working with C++, Python, JavaScript, React,
-            Node.js and Express.js.
+            I am continuously learning new technologies and
+            improving my programming and problem-solving skills.
         </p>
-
-        <p>
-            My goal is to become an exceptional developer and build
-            technology that solves meaningful problems.
-        </p>
-    </section>
+    </div>
 
 </body>
 </html>
-```

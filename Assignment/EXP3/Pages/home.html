@@ -1,0 +1,146 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prince | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #080808;
+            color: white;
+        }
+
+        header {
+            height: 70px;
+            padding: 0 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #222;
+        }
+
+        header h2 {
+            font-size: 28px;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #aaa;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        .hero {
+            min-height: calc(100vh - 70px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .hero p {
+            color: #999;
+            font-size: 18px;
+            margin: 20px 0;
+        }
+
+        .hero h1 {
+            font-size: 70px;
+            margin: 15px 0;
+        }
+
+        .hero h2 {
+            color: #aaa;
+            font-size: 28px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 14px 28px;
+            background: white;
+            color: black;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #ccc;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                padding: 0 20px;
+            }
+
+            nav {
+                gap: 10px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h2>Prince.</h2>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about.html">About</a>
+            <a href="/skills.html">Skills</a>
+            <a href="/projects.html">Projects</a>
+            <a href="/contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div>
+            <p>HELLO, I'M</p>
+
+            <h1>Prince Kumar Modi</h1>
+
+            <h2>Full Stack Developer</h2>
+
+            <p>
+                I build modern websites, REST APIs and software projects
+                using programming and web technologies.
+            </p>
+
+            <a href="/projects.html" class="btn">View My Projects</a>
+        </div>
+    </section>
+
+</body>
+</html>
+```

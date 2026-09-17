@@ -198,19 +198,16 @@ const server = http.createServer((req, res) => {
             const html = `
             <!DOCTYPE html>
             <html>
-
             <head>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <title>Student Records</title>
-
                 <style>
                     body {
                         font-family: Arial, sans-serif;
                         background: #f2f2f2;
                         padding: 40px;
                     }
-
                     .container {
                         max-width: 900px;
                         margin: auto;
@@ -219,44 +216,34 @@ const server = http.createServer((req, res) => {
                         border-radius: 10px;
                         box-shadow: 0 0 10px rgba(0,0,0,0.2);
                     }
-
                     h1 {
                         text-align: center;
                     }
-
                     table {
                         width: 100%;
                         border-collapse: collapse;
                         margin-top: 20px;
                     }
-
                     th, td {
                         border: 1px solid #ccc;
                         padding: 12px;
                         text-align: left;
                     }
-
                     th {
                         background: #222;
                         color: white;
                     }
-
                     a {
                         display: inline-block;
                         margin-top: 20px;
                     }
                 </style>
-
             </head>
-
             <body>
 
                 <div class="container">
-
                     <h1>Student Records</h1>
-
                     <table>
-
                         <tr>
                             <th>Student Name</th>
                             <th>Roll Number</th>
@@ -265,37 +252,27 @@ const server = http.createServer((req, res) => {
                         </tr>
 
                         ${rows}
-
                     </table>
 
                     <a href="/">Add Another Student</a>
-
                 </div>
-
             </body>
-
             </html>
             `;
-
             res.writeHead(200, {
                 "Content-Type": "text/html"
             });
-
             res.end(html);
         });
     }
 
     else {
-
         res.writeHead(404, {
             "Content-Type": "text/plain"
         });
-
         res.end("404 - Page Not Found");
     }
-
 });
-
 server.listen(3000, () => {
     console.log("Server running at http://localhost:3000");
 });

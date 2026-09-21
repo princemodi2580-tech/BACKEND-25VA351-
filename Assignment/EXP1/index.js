@@ -4,7 +4,6 @@ import fs from "fs";
 const server = http.createServer((req, res) => {
 
     if (req.method === "GET" && req.url === "/") {
-
         const html = `
         <!DOCTYPE html>
         <html>
